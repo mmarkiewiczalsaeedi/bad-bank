@@ -1,0 +1,10 @@
+.app {
+    background-color: rgba(218, 223, 238, 0.769);
+    min-height: 100vh;
+}
+
+.card-container {
+    align-content: center;
+    width: 20em;
+    margin: 2em auto auto auto
+  }
