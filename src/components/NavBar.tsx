@@ -4,11 +4,11 @@ import { Link, useLocation } from "react-router-dom";
 import {
 	ArrowBarRight,
 	ArrowBarToLeft,
-	BuildingBank,
-	Cash,
-	Database,
-	Home2,
-	Login,
+	BrandBeats,
+	Coin,
+	DatabaseExport,
+	Home,
+	DoorEnter,
 	UserPlus,
 } from "tabler-icons-react";
 import { auth } from "../firebase";
@@ -19,12 +19,12 @@ export const NavBar = () => {
 	const [user] = useAuthState(auth);
 
 	return (
-		<Navbar height={"100vh"} width={{ base: 200 }}>
-			<Navbar.Section mt="xs">
+		<Navbar height={"100vh"} width={{ base: 400 }}>
+			<Navbar.Section style={{ marginTop: "3em", marginBottom: "1em" }}>
 				<Stack align="center">
-					<BuildingBank size={48} strokeWidth={2} color={"black"} />
+					<BrandBeats size={60} strokeWidth={2} color={"black"} />
 					<Title order={1} align="center">
-						Bad Bank
+						Blissful Bank
 					</Title>
 				</Stack>
 			</Navbar.Section>
@@ -35,7 +35,7 @@ export const NavBar = () => {
 					component={Link}
 					to="/"
 					active={location.pathname === "/"}
-					icon={<Home2 size={24} strokeWidth={2} color={"black"} />}
+					icon={<Home size={24} strokeWidth={2} color={"black"} />}
 				/>
 				{!user?.email ? (
 					<>
@@ -51,7 +51,7 @@ export const NavBar = () => {
 							component={Link}
 							to="/login"
 							active={location.pathname === "/login"}
-							icon={<Login size={24} strokeWidth={2} color={"black"} />}
+							icon={<DoorEnter size={24} strokeWidth={2} color={"black"} />}
 						/>
 					</>
 				) : (
@@ -61,7 +61,7 @@ export const NavBar = () => {
 							component={Link}
 							to="/deposit"
 							active={location.pathname === "/deposit"}
-							icon={<Cash size={24} strokeWidth={2} color={"black"} />}
+							icon={<Coin size={24} strokeWidth={2} color={"black"} />}
 							rightSection={
 								<ArrowBarToLeft size={24} strokeWidth={2} color={"black"} />
 							}
@@ -71,7 +71,7 @@ export const NavBar = () => {
 							component={Link}
 							to="/withdraw"
 							active={location.pathname === "/withdraw"}
-							icon={<Cash size={24} strokeWidth={2} color={"black"} />}
+							icon={<Coin size={24} strokeWidth={2} color={"black"} />}
 							rightSection={
 								<ArrowBarRight size={24} strokeWidth={2} color={"black"} />
 							}
@@ -83,7 +83,7 @@ export const NavBar = () => {
 					component={Link}
 					to="/alldata"
 					active={location.pathname === "/alldata"}
-					icon={<Database size={24} strokeWidth={2} color={"black"} />}
+					icon={<DatabaseExport size={24} strokeWidth={2} color={"black"} />}
 				/>
 			</Navbar.Section>
 			<Navbar.Section>

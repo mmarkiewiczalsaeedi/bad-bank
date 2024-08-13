@@ -109,7 +109,7 @@ export const Login = () => {
 				</Card>
 			) : (
 				<Card shadow="lg" radius="xs" withBorder>
-					<h5>Success</h5>
+					<h5>You have successfully logged in!</h5>
 					<p>Welcome, {user?.email}</p>
 
 					<LogOutButton />

@@ -1,10 +1,18 @@
 .app {
-    background-color: rgba(218, 223, 238, 0.769);
-    min-height: 100vh;
+    background-color: rgba(240, 242, 247, 0.769); /* Gray background color */
+    min-height: 100vh; /* Full viewport height */
+    display: flex; /* Use flexbox for centering */
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
 }
 
+
 .card-container {
-    align-content: center;
-    width: 20em;
-    margin: 2em auto auto auto
-  }
+    width: 40em; /* Adjust width as needed */
+    margin: 7em auto; /* Center horizontally with auto margin on left and right */
+    padding: 2em; /* Padding around the content */
+    background-color: white; /* Background color of the card */
+    border-radius: 8px; /* Rounded corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Shadow for better visibility */
+    text-align: center; /* Center text within the card container */
+}

@@ -106,8 +106,8 @@ export const CreateAccount = () => {
 				</Card>
 			) : (
 				<Card shadow="lg" radius="xs" withBorder>
-					<h5>Success</h5>
-					<p>New User: {user?.email}</p>
+					<h5>Your account has been successfully created</h5>
+					<p>You are a new user: {user?.email}</p>
 
 					<LogOutButton />
 				</Card>
