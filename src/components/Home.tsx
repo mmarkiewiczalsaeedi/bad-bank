@@ -13,7 +13,7 @@ export const Home = () => {
 			<div className="card-container" style={{ maxWidth: "1200px", margin: "0 auto" }}>
 				<Stack align="center" style={{ padding: "2em", backgroundColor: "white", borderRadius: "8px", boxShadow: "0 4px 8px rgba(0, 0, 0, 0.1)" }}>
 					<h1>Welcome to <strong>Blissful Bank</strong></h1>
-					<h2 style={{ color: "#4a90e2", fontSize: "2.5em" }}>{user?.email ? `${user.email}` : ""}</h2>
+					<h2 style={{ color: "#4a90e2", fontSize: "2em" }}>{user?.email ? `${user.email}` : ""}</h2>
 					<img 
 						src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSKgDi49UNajVHptGLFHwnKrWoJTFepRCtWUg&s" 
 						alt="Blissful Bank Logo" 
