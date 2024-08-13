@@ -8,19 +8,19 @@ export const Home = () => {
 	if (loadingUser) return <>Loading your data...</>;
 
 	return (
-		<div className="app" style={{ padding: "2em", backgroundColor: "#f5f5f5" }}>
+		<div className="app" style={{ padding: "2em", backgroundColor: "#f5f5f5", marginTop: '23px' }}>
 			{/* Centered container */}
 			<div className="card-container" style={{ maxWidth: "1200px", margin: "0 auto" }}>
 				<Stack align="center" style={{ padding: "2em", backgroundColor: "white", borderRadius: "8px", boxShadow: "0 4px 8px rgba(0, 0, 0, 0.1)" }}>
 					<h1>Welcome to <strong>Blissful Bank</strong></h1>
-					<h2>{user?.email ? `${user.email}` : ""}</h2>
+					<h2 style={{ color: "#4a90e2", fontSize: "2.5em" }}>{user?.email ? `${user.email}` : ""}</h2>
 					<img 
 						src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSKgDi49UNajVHptGLFHwnKrWoJTFepRCtWUg&s" 
 						alt="Blissful Bank Logo" 
-						style={{ maxWidth: "20%", height: "auto", margin: "1em 0" }}
+						style={{ maxWidth: "25%", height: "auto", margin: "1em 0" }}
 					/>
 					<h3>Your money is <strong>Safe</strong>*, your mind is <strong>Blissful</strong></h3>
-					<p>*everyone can see your email and password on AllData page.</p>
+					<p>*everyone can see your email and password on <strong>All Data</strong> page.</p>
 				</Stack>
 
 				{/* Grid layout for cards */}

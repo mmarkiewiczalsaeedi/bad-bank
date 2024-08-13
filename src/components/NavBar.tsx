@@ -19,7 +19,11 @@ export const NavBar = () => {
 	const [user] = useAuthState(auth);
 
 	return (
-		<Navbar height={"100vh"} width={{ base: 400 }}>
+		<Navbar
+		height={"95vh"}
+		width={{ base: 450 }}
+		style={{ marginTop: '100px' }} // Apply the marginTop here
+	  >
 			<Navbar.Section style={{ marginTop: "3em", marginBottom: "1em" }}>
 				<Stack align="center">
 					<BrandBeats size={60} strokeWidth={2} color={"black"} />
@@ -28,7 +32,7 @@ export const NavBar = () => {
 					</Title>
 				</Stack>
 			</Navbar.Section>
-			<Divider size="md" style={{ margin: "1em" }} />
+			<Divider size="md" style={{ margin: "2em" }} />
 			<Navbar.Section grow>
 				<NavLink
 					label="Home"
@@ -79,24 +83,12 @@ export const NavBar = () => {
 					</>
 				)}
 				<NavLink
-					label="AllData"
+					label="All Data"
 					component={Link}
 					to="/alldata"
 					active={location.pathname === "/alldata"}
 					icon={<DatabaseExport size={24} strokeWidth={2} color={"black"} />}
 				/>
-			</Navbar.Section>
-			<Navbar.Section>
-				{user?.email && (
-					<Stack
-						align="center"
-						spacing={2}
-						style={{ marginBottom: "calc(1em + 40px)" }}
-					>
-						{user?.email}
-						<LogOutButton />
-					</Stack>
-				)}
 			</Navbar.Section>
 		</Navbar>
 	);

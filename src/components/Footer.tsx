@@ -8,7 +8,7 @@ export const FooterComponent = () => {
 				<Copyright size={20} strokeWidth={1.5} color={"black"} />
 				<Text>Michał Markiewicz-Al Saeedi 2024</Text>
 				<Anchor
-					href="https://www.linkedin.com/in/mmarkiewiczalsaeedi/?originalSubdomain=de"
+					href="https://www.linkedin.com/in/mmarkiewiczalsaeedi"
 					target="_blank"
 				>
 					Michał Markiewicz-Al Saeedi

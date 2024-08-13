@@ -90,7 +90,7 @@ export const AllData = () => {
 	}
 
 	return (
-		<Stack align="center" style={{ paddingTop: "2em" }}>
+		<Stack align="center" style={{ paddingTop: "4em" }}>
 			<h1>All Data</h1>
 			<Accordion
 				style={{ width: "75%" }}

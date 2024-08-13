@@ -9,10 +9,12 @@ import { Home } from "./components/Home";
 import { Login } from "./components/Login";
 import { NavBar } from "./components/NavBar";
 import { Withdraw } from "./components/Withdraw";
+import { Header } from "./components/Header";
 
 function App() {
 	return (
 		<AppShell
+			header={<Header />}
 			navbar={<NavBar />}
 			footer={<FooterComponent />}
 			style={{ backgroundColor: "rgba(218, 223, 238, 0.769)" }}
