@@ -95,6 +95,7 @@ export const AllData = () => {
             <br />
             <h6>Name: {data.name}</h6>
             <h6>Email: {data.email}</h6>
+            <h6>Account Number: {data.accountNumber}</h6> {/* Display the account number */}
             <h6>Password: {data.password}</h6>
             <br />
             <p style={{ textAlign: "center" }}>

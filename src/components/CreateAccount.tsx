@@ -16,6 +16,11 @@ export const CreateAccount = () => {
 	const [shortPass, setShortPass] = useState(false);
 	const [error, setError] = useState(false);
 
+	// Function to generate a random 10-digit account number
+	const generateAccountNumber = () => {
+		return Math.floor(1000000000 + Math.random() * 9000000000).toString(); // Generates a 10-digit number
+	};
+
 	const validate = (field: any, label: any) => {
 		if (!field) {
 			setStatus(`Error: ${label}`);
@@ -37,26 +42,30 @@ export const CreateAccount = () => {
 		if (!validate(email, "email")) return;
 		if (!validate(password, "password")) return;
 
-		createUserWithEmailAndPassword(auth, email, password)
-			.then(async (userCredential) => {
-				const user = userCredential.user;
+		try {
+			const userCredential = await createUserWithEmailAndPassword(auth, email, password);
+			const user = userCredential.user;
 
-				await setDoc(doc(db, "users", user.uid), {
-					uid: user.uid,
-					name: name,
-					email: email,
-					password: password,
-					balance: 100,
-					history: [],
-				});
-			})
-			.catch((err) => {
-				setError(err);
+			const accountNumber = generateAccountNumber(); // Generate random account number
+
+			// Store user data along with the generated account number
+			await setDoc(doc(db, "users", user.uid), {
+				uid: user.uid,
+				name: name,
+				email: email,
+				password: password,
+				accountNumber: accountNumber, // Store the account number
+				balance: 100,
+				history: [],
 			});
 
-		setName("");
-		setEmail("");
-		setPassword("");
+			setName("");
+			setEmail("");
+			setPassword("");
+		} catch (err) {
+			setError(true);
+			console.error("Error creating account:", err);
+		}
 	};
 
 	useEffect(() => {
@@ -94,10 +103,16 @@ export const CreateAccount = () => {
 							onChange={(e) => setPassword(e.currentTarget.value)}
 						/>
 						<br />
-						{shortPass
-							? "*Password need to be more than 6 character long!"
-							: ""}
-						{error ? "Error Occured. Email might be already in use!" : ""}
+						{shortPass && (
+							<p style={{ color: "red" }}>
+								*Password needs to be more than 6 characters long!
+							</p>
+						)}
+						{error && (
+							<p style={{ color: "red" }}>
+								Error occurred. Email might already be in use!
+							</p>
+						)}
 
 						<Button onClick={handleCreate} disabled={disableButton}>
 							Create Account
